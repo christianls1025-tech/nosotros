@@ -1,4 +1,6 @@
-/* HERO DE PÁGINA */
+/* ==========================================================================
+   HERO DE PÁGINA
+   ========================================================================== */
 .page-hero {
     padding: 140px 8% 40px;
     text-align: center;
@@ -18,134 +20,89 @@
     font-size: 1.1rem;
 }
 
-/* CONTENEDOR */
+/* ==========================================================================
+   CONTENEDOR
+   ========================================================================== */
 .playlist-page-container {
     padding: 20px 8% 80px;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* REPRODUCTOR PRINCIPAL */
-.now-playing {
-    background: linear-gradient(135deg, rgba(255,77,109,0.15), rgba(132,94,194,0.15));
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 30px;
-    padding: 40px;
-    text-align: center;
-    margin-bottom: 40px;
-    backdrop-filter: blur(15px);
-}
-
-.album-art {
-    width: 160px;
-    height: 160px;
-    background: linear-gradient(135deg, #ff4d6d, #845ec2);
+/* ==========================================================================
+   SPOTIFY EMBED WRAPPER
+   ========================================================================== */
+.spotify-embed-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 25px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transition: 0.4s ease;
+}
+
+.spotify-embed-wrapper:hover {
+    border-color: rgba(255, 77, 109, 0.3);
+    box-shadow: 0 25px 60px rgba(255, 77, 109, 0.15);
+}
+
+.spotify-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    font-size: 4rem;
-    color: white;
-    box-shadow: 0 15px 40px rgba(255,77,109,0.4);
-    animation: rotateDisc 6s linear infinite;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(255, 77, 109, 0.25);
 }
 
-@keyframes rotateDisc {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
-
-.now-playing h2 {
+.spotify-header i {
     font-size: 1.8rem;
-    margin-bottom: 5px;
-    color: white;
+    color: #1DB954; /* Verde característico de Spotify */
 }
 
-.now-playing .artist {
-    color: #b0b0c0;
-    margin-bottom: 25px;
-}
-
-.now-playing audio {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 30px;
-    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
-}
-
-/* LISTA DE CANCIONES */
-.song-list-page {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 15px;
-}
-
-.song-item {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 15px 20px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.song-item:hover {
-    background: rgba(255,77,109,0.1);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255,77,109,0.2);
-}
-
-.song-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #ff4d6d, #845ec2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: white;
-}
-
-.song-info-page h4 {
-    font-size: 1rem;
+.spotify-header span {
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 3px;
-    color: white;
+    color: #ff4d6d;
 }
 
-.song-info-page p {
+.spotify-iframe {
+    border-radius: 15px;
+    display: block;
+    width: 100%;
+}
+
+.spotify-note {
+    margin-top: 18px;
+    text-align: center;
     font-size: 0.85rem;
     color: #b0b0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.song-item .ms-auto {
-    margin-left: auto;
-    color: #b0b0c0;
+.spotify-note i {
+    color: #ff4d6d;
 }
 
-/* RESPONSIVE */
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
 @media (max-width: 900px) {
-    .song-list-page {
-        grid-template-columns: 1fr;
-    }
-    .now-playing {
-        padding: 25px;
-    }
-    .album-art {
-        width: 120px;
-        height: 120px;
-        font-size: 3rem;
-    }
     .page-hero h1 {
         font-size: 2.2rem;
     }
     .playlist-page-container {
         padding: 20px 5% 60px;
+    }
+    .spotify-embed-wrapper {
+        padding: 18px;
+    }
+    .spotify-header span {
+        font-size: 1rem;
     }
 }
 
@@ -153,7 +110,10 @@
     .page-hero h1 {
         font-size: 1.9rem;
     }
-    .now-playing h2 {
-        font-size: 1.3rem;
+    .spotify-iframe {
+        height: 380px;
+    }
+    .spotify-header i {
+        font-size: 1.5rem;
     }
 }
