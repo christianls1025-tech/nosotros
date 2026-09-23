@@ -4,13 +4,10 @@ AOS.init({
     once:true
 });
 
-/* MUSIC */
+/* MUSIC (música de fondo) */
 
-const music =
-document.getElementById('music');
-
-const musicBtn =
-document.getElementById('musicBtn');
+const music = document.getElementById('music');
+const musicBtn = document.getElementById('musicBtn');
 
 let playing = false;
 
@@ -93,7 +90,7 @@ function updateCounter() {
 
     let years = now.getFullYear() - togetherDate.getFullYear();
     let months = now.getMonth() - togetherDate.getMonth();
-    
+
     if (months < 0) {
         years--;
         months += 12;
@@ -122,11 +119,11 @@ function updateCounter() {
     const seconds = Math.floor((difference / 1000) % 60);
 
     let output = "❤️ ";
-    
+
     output += `${years} ${years === 1 ? 'año' : 'años'}, `;
-    
+
     output += `${months} ${months === 1 ? 'mes' : 'meses'}, `;
-    
+
     output += `${days} ${days === 1 ? 'día' : 'días'}<br>`;
     output += `${hours} horas, ${minutes} minutos y ${seconds} segundos ❤️`;
 
@@ -218,7 +215,7 @@ function createHeart(){
 setInterval(createHeart,800);
 
 /* ==========================================================================
-   MENU RESPONSIVO + DROPDOWN CORREGIDO
+   MENU RESPONSIVO + DROPDOWN
    ========================================================================== */
 
 const menuToggle = document.getElementById('menuToggle');
@@ -231,12 +228,6 @@ if (menuToggle && navLinks) {
     });
 }
 
-/* 
-  CERRAR EL MENÚ AL DAR CLIC EN UN ENLACE REAL (NO EN EL DROPDOWN TOGGLE)
-  Excluimos:
-    - Enlaces con clase .dropdown-toggle (los que abren el submenú)
-    - Enlaces que tengan href="#"
-*/
 const navItems = document.querySelectorAll('.nav-links a');
 
 navItems.forEach(item => {
@@ -244,18 +235,16 @@ navItems.forEach(item => {
         const isDropdownToggle = item.classList.contains('dropdown-toggle');
         const isHashOnly = item.getAttribute('href') === '#';
 
-        // Si es el toggle del dropdown o un enlace "#", NO cerramos el menú
         if (isDropdownToggle || isHashOnly) {
             e.preventDefault();
             return;
         }
 
-        // En cualquier otro enlace, cerramos el menú
         if (navLinks) navLinks.classList.remove('active');
     });
 });
 
-/* DROPDOWN EN MÓVIL: abrir/cerrar sin cerrar el nav */
+/* DROPDOWN EN MÓVIL */
 document.querySelectorAll('.nav-links li.dropdown > a').forEach(link => {
     link.addEventListener('click', (e) => {
         if (window.innerWidth <= 900) {
@@ -266,63 +255,6 @@ document.querySelectorAll('.nav-links li.dropdown > a').forEach(link => {
         }
     });
 });
-
-/* ==========================================================================
-   LÓGICA DEL REPRODUCTOR DE LA BANDA SONORA
-   ========================================================================== */
-const globalPlaylistAudio = document.getElementById('globalPlaylistAudio');
-const songCards = document.querySelectorAll('.song-card');
-
-songCards.forEach(card => {
-    const playBtn = card.querySelector('.play-song-btn');
-    const songSrc = card.getAttribute('data-song');
-
-    if (playBtn && songSrc) {
-        playBtn.addEventListener('click', () => {
-            if (card.classList.contains('playing-now')) {
-                globalPlaylistAudio.pause();
-                card.classList.remove('playing-now');
-                playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-            } else {
-                songCards.forEach(c => {
-                    c.classList.remove('playing-now');
-                    const btn = c.querySelector('.play-song-btn');
-                    if (btn) btn.innerHTML = '<i class="fa-solid fa-play"></i>';
-                });
-
-                if (playing && music && musicBtn) {
-                    music.pause();
-                    playing = false;
-                    musicBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-                    musicBtn.classList.remove('playing');
-                }
-
-                globalPlaylistAudio.src = songSrc;
-                globalPlaylistAudio.play()
-                    .then(() => {
-                        card.classList.add('playing-now');
-                        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-                    })
-                    .catch(err => {
-                        console.log("Asegúrate de colocar un archivo válido en: " + songSrc);
-                    });
-            }
-        });
-    }
-});
-
-if (musicBtn) {
-    musicBtn.addEventListener('click', () => {
-        if (!playing) { 
-            if (globalPlaylistAudio) globalPlaylistAudio.pause();
-            songCards.forEach(c => {
-                c.classList.remove('playing-now');
-                const btn = c.querySelector('.play-song-btn');
-                if (btn) btn.innerHTML = '<i class="fa-solid fa-play"></i>';
-            });
-        }
-    });
-}
 
 /* ==========================================================================
    CÁPSULA DEL TIEMPO
@@ -360,10 +292,10 @@ if (saveCapsuleBtn && capsuleInput) {
 
         const newNote = { text: text, date: today };
         savedNotes.push(newNote);
-        
+
         localStorage.setItem('coupleNotes', JSON.stringify(savedNotes));
         displayNotes();
-        
+
         capsuleInput.value = '';
     });
 }
