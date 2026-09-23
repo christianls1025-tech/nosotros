@@ -1,4 +1,14 @@
 // AOS
+// En móvil, las animaciones fade-left / fade-right desplazan el elemento
+// 100px hacia un lado, y eso hace que la página se vea corrida a la izquierda
+// (o con scroll horizontal) hasta que termina la animación.
+// Las cambiamos por fade-up, que es vertical y no mueve nada de lado.
+if (window.innerWidth <= 900) {
+    document
+        .querySelectorAll('[data-aos="fade-right"], [data-aos="fade-left"]')
+        .forEach(el => el.setAttribute('data-aos', 'fade-up'));
+}
+
 AOS.init({
     duration:1000,
     once:true
@@ -197,7 +207,7 @@ function createHeart(){
     heart.innerHTML = '❤️';
 
     heart.style.left =
-    Math.random() * 100 + 'vw';
+    Math.random() * 92 + 'vw';
 
     heart.style.fontSize =
     Math.random() * 20 + 10 + 'px';
