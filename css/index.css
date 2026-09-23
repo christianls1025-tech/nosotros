@@ -192,7 +192,7 @@ body{
     justify-content: space-between;
     gap: 50px;
     position: relative;
-    scroll-margin-top: 100px; /* Evita que el ancla quede tapada por el navbar */
+    scroll-margin-top: 100px;
 }
 
 .hero-content{
@@ -252,7 +252,7 @@ body{
 .section-title{
     text-align:center;
     margin-bottom:60px;
-    scroll-margin-top: 100px; /* Evita que el ancla quede tapada por el navbar */
+    scroll-margin-top: 100px;
 }
 
 .section-title h2{
@@ -279,7 +279,7 @@ body{
 .chat-section,
 .videos-section{
     padding:120px 8%;
-    scroll-margin-top: 100px; /* Evita que el ancla quede tapada por el navbar */
+    scroll-margin-top: 100px;
 }
 
 /* TIMELINE */
@@ -570,19 +570,19 @@ footer{
         gap: 50px;
         padding: 60px 5%;
     }
-    
+
     .stats-container, .bucket-container {
         width: 100%;
     }
 
-    .stats-container .section-title, 
+    .stats-container .section-title,
     .bucket-container .section-title {
         text-align: center !important;
     }
 }
 
 /* ==========================================================================
-   PLAYLIST
+   PLAYLIST CON SPOTIFY
    ========================================================================== */
 .playlist-section {
     padding: 50px 8%;
@@ -590,57 +590,47 @@ footer{
     scroll-margin-top: 100px;
 }
 
-.playlist-container {
+.spotify-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
     width: 100%;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 25px;
 }
 
-@media(max-width: 900px) {
-    .playlist-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-}
-
-.song-card {
+.spotify-card {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    padding: 15px 25px;
-    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 22px;
+    border-radius: 22px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-.song-card:hover {
-    transform: translateY(-2px);
+.spotify-card:hover {
+    transform: translateY(-4px);
     background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 }
 
-.song-card.playing-now {
-    border-color: rgba(255, 77, 109, 0.4);
-    background: rgba(255, 77, 109, 0.08);
-}
-
-.song-info {
+.spotify-header {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .song-icon i {
     font-size: 1.8rem;
     color: #ff4d6d;
-    animation: none;
+    animation: rotateDisc 4s linear infinite;
 }
 
-.song-card.playing-now .song-icon i {
-    animation: rotateDisc 3s linear infinite;
+@keyframes rotateDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .song-details h3 {
@@ -655,49 +645,33 @@ footer{
     color: #b0b0c0;
 }
 
-.play-song-btn {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+.spotify-card iframe {
+    display: block;
+    width: 100%;
     border: none;
-    background: linear-gradient(135deg, #ff4d6d, #845ec2);
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
-}
-
-.play-song-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 15px rgba(255, 77, 109, 0.5);
-}
-
-@keyframes rotateDisc {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    border-radius: 12px;
 }
 
 @media(max-width: 900px) {
     .playlist-section {
         padding: 60px 5%;
     }
-    .song-card {
-        padding: 15px 18px;
+
+    .spotify-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
+
+    .spotify-card {
+        padding: 18px;
+    }
+
     .song-details h3 {
         font-size: 1rem;
     }
+
     .song-details p {
         font-size: 0.82rem;
-    }
-    .play-song-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
     }
 }
 
@@ -875,12 +849,12 @@ footer{
         width: 100%;
         background: rgba(15, 15, 27, 0.98);
         backdrop-filter: blur(15px);
-        
+
         flex-direction: column;
         align-items: center;
         padding: 20px 0;
         gap: 18px;
-        
+
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
@@ -896,7 +870,6 @@ footer{
         transform: translateY(0);
     }
 
-    /* Dropdown en móvil: se expande sin cerrar el nav */
     .nav-links li.dropdown {
         width: 100%;
         text-align: center;
@@ -947,11 +920,10 @@ footer{
         transform: rotate(180deg);
     }
 
-    /* ⬇️ HERO en móvil con MUCHO más aire */
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 180px;      /* Mucho más aire arriba */
+        padding-top: 180px;
         padding-bottom: 60px;
         padding-left: 6%;
         padding-right: 6%;
@@ -964,12 +936,12 @@ footer{
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding-top: 20px;       /* Aire extra dentro del contenido */
+        padding-top: 20px;
     }
 
     .tag {
-        margin-top: 20px;        /* Separación del navbar */
-        margin-bottom: 25px;     /* Separación del título */
+        margin-top: 20px;
+        margin-bottom: 25px;
         font-size: 0.9rem;
         padding: 10px 20px;
     }
@@ -1010,13 +982,9 @@ footer{
         padding: 60px 5% !important;
     }
 
-    .playlist-container {
+    .spotify-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .song-card {
-        padding: 15px 18px;
+        gap: 20px;
     }
 
     .capsule-messages {
