@@ -186,12 +186,13 @@ body{
 
 .hero {
     min-height: 100vh;
-    padding: 120px 8% 40px 8%;
+    padding: 140px 8% 40px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
     position: relative;
+    scroll-margin-top: 100px; /* Evita que el ancla quede tapada por el navbar */
 }
 
 .hero-content{
@@ -200,9 +201,12 @@ body{
 }
 
 .tag{
+    display: inline-block;
     background:rgba(255,255,255,0.1);
     padding:10px 20px;
     border-radius:30px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
 }
 
 .hero h1{
@@ -248,6 +252,7 @@ body{
 .section-title{
     text-align:center;
     margin-bottom:60px;
+    scroll-margin-top: 100px; /* Evita que el ancla quede tapada por el navbar */
 }
 
 .section-title h2{
@@ -274,6 +279,7 @@ body{
 .chat-section,
 .videos-section{
     padding:120px 8%;
+    scroll-margin-top: 100px; /* Evita que el ancla quede tapada por el navbar */
 }
 
 /* TIMELINE */
@@ -350,20 +356,20 @@ body{
     background:rgba(255,255,255,0.08);
     padding:35px 30px;
     border-radius:25px;
-    text-align:center;          /* ← NUEVO: centra todo el contenido */
+    text-align:center;
     display:flex;
     flex-direction:column;
-    justify-content:center;     /* ← NUEVO: centra verticalmente */
-    align-items:center;         /* ← NUEVO: centra horizontalmente */
-    gap:15px;                   /* ← NUEVO: separa título y texto */
-    min-height:220px;           /* ← NUEVO: altura uniforme entre tarjetas */
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    min-height:220px;
     transition:0.4s ease;
 }
 
 .letter-card h3{
     font-size:1.15rem;
     font-weight:600;
-    color:#ff4d6d;              /* ← NUEVO: acento rosa al título */
+    color:#ff4d6d;
     line-height:1.3;
 }
 
@@ -482,6 +488,7 @@ footer{
     gap: 60px;
     justify-content: space-between;
     align-items: flex-start;
+    scroll-margin-top: 100px;
 }
 
 .stats-container, .bucket-container {
@@ -580,6 +587,7 @@ footer{
 .playlist-section {
     padding: 50px 8%;
     background: transparent;
+    scroll-margin-top: 100px;
 }
 
 .playlist-container {
@@ -699,6 +707,7 @@ footer{
 .capsule-section {
     padding: 50px 8%;
     background: transparent;
+    scroll-margin-top: 100px;
 }
 
 .capsule-container {
@@ -938,15 +947,60 @@ footer{
         transform: rotate(180deg);
     }
 
+    /* ⬇️ HERO en móvil con MUCHO más aire */
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px;
-        padding-bottom: 20px;
+        padding-top: 180px;      /* Mucho más aire arriba */
+        padding-bottom: 60px;
+        padding-left: 6%;
+        padding-right: 6%;
+        gap: 50px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-top: 20px;       /* Aire extra dentro del contenido */
+    }
+
+    .tag {
+        margin-top: 20px;        /* Separación del navbar */
+        margin-bottom: 25px;     /* Separación del título */
+        font-size: 0.9rem;
+        padding: 10px 20px;
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        margin: 20px 0 25px 0;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+        margin-bottom: 10px;
+    }
+
+    .date-box,
+    .counter {
+        width: 100%;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-images {
+        margin-top: 20px;
+        gap: 15px;
+    }
+
+    .hero-images img {
+        width: 200px;
+        height: 300px;
     }
 
     .playlist-section,
@@ -977,5 +1031,40 @@ footer{
     }
     .logo i {
         font-size: 0.95rem;
+    }
+
+    .hero {
+        padding-top: 160px;
+        padding-bottom: 40px;
+        gap: 40px;
+    }
+
+    .hero-content {
+        padding-top: 15px;
+    }
+
+    .tag {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin: 15px 0 20px 0;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .hero-images {
+        margin-top: 15px;
+    }
+
+    .hero-images img {
+        width: 160px;
+        height: 240px;
     }
 }
