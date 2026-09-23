@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Historia ❤️</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+</head>
+
+<body>
+
+    <!-- PARTICLES -->
+    <div id="particles"></div>
+
+    <!-- MUSIC -->
+    <audio id="music" loop>
+        <source src="music/song.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-heart"></i> Christian & Yin
+        </a>
+
+        <div class="nav-actions">
+            <button id="musicBtn" title="Música de fondo">
+                <i class="fa-solid fa-play"></i>
+            </button>
+
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <!-- Enlaces del index primero -->
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#historia">Historia</a></li>
+            <li><a href="index.html#favoritos">Favoritos</a></li>
+            <li><a href="index.html#cartas">Cartas</a></li>
+            <li><a href="index.html#videos">Videos</a></li>
+
+            <!-- Enlaces a otras páginas -->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Galería <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="galeria_imagenes.html">Imágenes</a></li>
+                    <li><a href="galeria_videos.html">Videos</a></li>
+                    <li><a href="galeria_playlist.html">Playlist</a></li>
+                </ul>
+            </li>
+            <li><a href="detalles.html">Detalles</a></li>
+            <li><a href="preguntas_frecuentes.html">FAQ</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero"
+        id="inicio">
+
+        <div class="hero-content"
+            data-aos="fade-right">
+
+            <span class="tag">
+
+                ✨ Nuestra Historia ✨
+
+            </span>
+
+            <h1>
+
+                Tú & Yo ❤️
+
+            </h1>
+
+            <p>
+
+                Un pequeño espacio lleno de recuerdos,
+                sonrisas, momentos especiales y todo lo
+                bonito que hemos vivido juntos.
+
+            </p>
+
+            <div class="date-box">
+
+                ❤️ Nuestra fecha:
+                <strong>
+                    07 de noviembre del 2024
+                </strong>
+
+            </div>
+
+            <div class="counter">
+
+                <h3>
+                    ⏳ Llevamos juntos:
+                </h3>
+
+                <div id="timeTogether"></div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-images"
+            data-aos="fade-left">
+
+            <img src="img/Christian.jpeg"
+                alt="">
+
+            <img src="img/Yin.jpeg"
+                alt="">
+
+        </div>
+
+    </section>
+
+    <!-- PHRASE -->
+    <section class="phrase-section">
+
+        <h2 id="randomPhrase"></h2>
+
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline-section"
+        id="historia">
+
+        <div class="section-title">
+
+            <h2>
+                📖 Nuestra Historia
+            </h2>
+
+            <p>
+                Pequeños momentos que se volvieron inolvidables.
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item"
+                data-aos="fade-right">
+
+                <h3>
+                    ✨ Cómo nos conocimos
+                </h3>
+
+                <p>
+                    Todo comenzó por una amiga y una conversación que terminó cambiándolo todo.
+                </p>
+
+            </div>
+
+            <div class="timeline-item"
+                data-aos="fade-left">
+
+                <h3>
+                    💕 Primera cita
+                </h3>
+
+                <p>
+                    Nervios y momentos inolvidables en el cine.
+                </p>
+
+            </div>
+
+            <div class="timeline-item"
+                data-aos="fade-right">
+
+                <h3>
+                    🌎 Nuevos recuerdos
+                </h3>
+
+                <p>
+                    Cada uno de los recuerdos contigo es algo especial.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAVORITOS -->
+    <section class="favorites-section"
+        id="favoritos">
+
+        <div class="section-title">
+
+            <h2>
+                🌟 Nuestros Favoritos
+            </h2>
+
+        </div>
+
+        <div class="favorites-grid">
+
+            <div class="favorite-card"
+                data-aos="zoom-in">
+
+                <i class="fa-solid fa-music"></i>
+
+                <h3>
+                    Canción
+                </h3>
+
+                <p>
+                    Perfect
+                </p>
+
+            </div>
+
+            <div class="favorite-card"
+                data-aos="zoom-in">
+
+                <i class="fa-solid fa-film"></i>
+
+                <h3>
+                    Película
+                </h3>
+
+                <p>
+                   La sustancia
+                </p>
+
+            </div>
+
+            <div class="favorite-card"
+                data-aos="zoom-in">
+
+                <i class="fa-solid fa-utensils"></i>
+
+                <h3>
+                    Comida
+                </h3>
+
+                <p>
+                    Hamburguesas
+                </p>
+
+            </div>
+
+            <div class="favorite-card"
+                data-aos="zoom-in">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <h3>
+                    Lugar
+                </h3>
+
+                <p>
+                    Restaurante (Primera cita)
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section"
+        id="galeria">
+
+        <div class="section-title">
+
+            <h2>📸 Nuestros Momentos</h2>
+
+            <p>Cada foto guarda un recuerdo especial ❤️</p>
+
+        </div>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="img/1 (51).jpeg"
+                    alt="">
+            </div>
+
+            <div class="card">
+                <img src="img/1 (1).jpeg"
+                    alt="">
+            </div>
+
+            <div class="card">
+                <img src="img/1 (67).jpeg"
+                    alt="">
+            </div>
+
+            <div class="card">
+                <img src="img/1 (13).jpeg"
+                    alt="">
+            </div>
+
+            <div class="card">
+                <img src="img/1 (25).jpeg"
+                    alt="">
+            </div>
+
+            <div class="card">
+                <img src="img/1 (23).jpeg"
+                    alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CARTAS -->
+    <section class="letters-section"
+        id="cartas">
+
+        <div class="section-title">
+
+            <h2>
+                💌 Cartas Especiales
+            </h2>
+
+        </div>
+
+        <div class="letters-grid">
+
+            <div class="letter-card"
+                data-aos="fade-up">
+
+                <h3>
+                    ❤️ Ábreme
+                </h3>
+
+                <p>
+                    Gracias por llegar a mi vida y convertir tantos momentos simples en recuerdos que quiero guardar para siempre.
+                </p>
+
+            </div>
+
+            <div class="letter-card"
+                data-aos="fade-up">
+
+                <h3>
+                    💌 Un pedacito de mi corazón
+                </h3>
+
+                <p>
+                    Si pudiera elegir una y otra vez a la persona con quien compartir mis días, te elegiría a ti, sin pensarlo.
+                </p>
+
+            </div>
+
+            <div class="letter-card"
+                data-aos="fade-up">
+
+                <h3>
+                    🌸 Para ti
+                </h3>
+
+                <p>
+                    Entre tantos lugares y tantas personas, tú te convertiste en mi lugar favorito, en donde siempre quiero estar.
+                </p>
+
+            </div>
+
+            <div class="letter-card"
+                data-aos="fade-up">
+
+                <h3>
+                    ✨ Nuestro futuro
+                </h3>
+
+                <p>
+                    Quiero seguir caminando a tu lado, viviendo nuevas aventuras, superando cada etapa juntos y llenando nuestra historia de recuerdos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CHAT -->
+    <section class="chat-section">
+
+        <div class="section-title">
+
+            <h2>
+                💬 Conversaciones
+            </h2>
+
+        </div>
+
+        <div class="chat-container">
+
+            <div class="message left">
+
+                ❤️ ¿Ya comiste?
+
+            </div>
+
+            <div class="message right">
+
+                Sí, pero te extraño 😔
+
+            </div>
+
+            <div class="message left">
+
+                Yo más ❤️
+
+            </div>
+
+            <div class="message right">
+
+                Siempre tú ✨
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- VIDEOS -->
+    <section class="videos-section"
+        id="videos">
+
+        <div class="section-title">
+
+            <h2>
+                🎥 Videos Especiales
+            </h2>
+
+        </div>
+
+        <div class="videos-grid">
+
+            <video controls>
+
+                <source src="vid/1.mp4"
+                    type="video/mp4">
+
+            </video>
+
+            <video controls>
+
+                <source src="vid/3.mp4"
+                    type="video/mp4">
+
+            </video>
+
+        </div>
+
+    </section>
+
+   <section class="stats-bucket-section" id="detalles">
+
+        <div class="stats-container" data-aos="fade-right">
+            <div class="section-title" style="margin-bottom: 30px; text-align: left;">
+                <h2>📊 Nuestras Estadísticas</h2>
+                <p>El balance perfecto de nuestro equipo.</p>
+            </div>
+            
+            <div class="stat-item">
+                <span>🎬 Horas viendo películas y series juntos</span>
+                <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+            </div>
+            <div class="stat-item">
+                <span>💬 Salidas a diversos lugares</span>
+                <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+            </div>
+            <div class="stat-item">
+                <span>🍣 Antojos compartidos</span>
+                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+            </div>
+            <div class="stat-item">
+                <span>🎯 Paciencia y apoyo mutuo</span>
+                <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+            </div>
+        </div>
+
+        <div class="bucket-container" data-aos="fade-left">
+            <div class="section-title" style="margin-bottom: 30px; text-align: left;">
+                <h2>🗺️ Próximas Aventuras</h2>
+                <p>Planes y metas por cumplir juntos.</p>
+            </div>
+
+            <div class="bucket-list">
+                <div class="bucket-item completed">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Tener nuestra primera cita especial</span>
+                </div>
+                <div class="bucket-item completed">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Escuchar nuestra canción favorita juntos</span>
+                </div>
+                <div class="bucket-item">
+                    <i class="fa-solid fa-circle"></i>
+                    <span>Un viaje de fin de semana juntos</span>
+                </div>
+                <div class="bucket-item">
+                    <i class="fa-solid fa-circle"></i>
+                    <span>Cocinar algo nuevo desde cero</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="playlist-section" id="banda-sonora">
+        <div class="section-title" data-aos="fade-up">
+            <h2>🎵 Nuestra Banda Sonora</h2>
+            <p>Las canciones que cuentan nuestra historia. Dale play a tu favorita.</p>
+        </div>
+
+        <div class="playlist-container" data-aos="fade-up">
+            <div class="song-card" data-song="mus/cancion1.mp3">
+                <div class="song-info">
+                    <div class="song-icon"><i class="fa-solid fa-compact-disc"></i></div>
+                    <div class="song-details">
+                        <h3>Nuestro Primer Beso</h3>
+                        <p>El tema con el que empezó todo ❤️</p>
+                    </div>
+                </div>
+                <button class="play-song-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
+
+            <div class="song-card" data-song="mus/cancion2.mp3">
+                <div class="song-info">
+                    <div class="song-icon"><i class="fa-solid fa-compact-disc"></i></div>
+                    <div class="song-details">
+                        <h3>Para los días de flojera</h3>
+                        <p>La que escuchamos viendo pelis 🍿</p>
+                    </div>
+                </div>
+                <button class="play-song-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
+
+            <div class="song-card" data-song="mus/Primera Cita.mpeg">
+                <div class="song-info">
+                    <div class="song-icon"><i class="fa-solid fa-compact-disc"></i></div>
+                    <div class="song-details">
+                        <h3>La que me recuerda a ti</h3>
+                        <p>Su letra describe todo lo que siento por ti ✨</p>
+                    </div>
+                </div>
+                <button class="play-song-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
+
+            <div class="song-card" data-song="mus/cancion4.mp3">
+                <div class="song-info">
+                    <div class="song-icon"><i class="fa-solid fa-compact-disc"></i></div>
+                    <div class="song-details">
+                        <h3>Ritmo Alegre</h3>
+                        <p>Para cuando vamos cantando en nuestros días 🚗</p>
+                    </div>
+                </div>
+                <button class="play-song-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
+
+            <div class="song-card" data-song="mus/Destino.mpeg">
+                <div class="song-info">
+                    <div class="song-icon"><i class="fa-solid fa-compact-disc"></i></div>
+                    <div class="song-details">
+                        <h3>Promesa</h3>
+                        <p>Por muchos más días sumando recuerdos 🌸</p>
+                    </div>
+                </div>
+                <button class="play-song-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
+        </div>
+
+        <audio id="globalPlaylistAudio"></audio>
+    </section>
+
+    <section class="capsule-section" id="capsula">
+        <div class="section-title" data-aos="fade-up">
+            <h2>🍾 Cápsula del Tiempo</h2>
+            <p>Escribe un micro-recuerdo, promesa o nota tonta de hoy para que nunca se borre.</p>
+        </div>
+
+        <div class="capsule-container" data-aos="fade-up">
+            <div class="capsule-input-box">
+                <textarea id="capsuleInput" placeholder="Escribe algo lindo aquí... (Ej: Hoy fuimos por helado y te veías hermosa)"></textarea>
+                <button id="saveCapsuleBtn"><i class="fa-solid fa-paper-plane"></i> Guardar en la Cápsula</button>
+            </div>
+
+            <div class="capsule-messages" id="capsuleMessages">
+                </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>
+            ❤️ Tú & Yo ❤️
+        </h2>
+
+        <p>
+
+            Gracias por cada momento,
+            sonrisa y recuerdo juntos.
+
+        </p>
+
+        <div class="footer-icons">
+
+            <i class="fa-brands fa-instagram"></i>
+
+            <i class="fa-brands fa-spotify"></i>
+
+            <i class="fa-solid fa-heart"></i>
+
+        </div>
+
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox"
+        id="lightbox">
+
+        <span class="close">
+
+            &times;
+
+        </span>
+
+        <img id="lightbox-img">
+
+    </div>
+
+    <!-- SCRIPTS -->
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- PARTICLES -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <!-- JS -->
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

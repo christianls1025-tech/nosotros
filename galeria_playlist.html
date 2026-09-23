@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Playlist ❤️ | Christian & Yin</title>
+    <link rel="icon" type="image/png" href="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/galeria_playlist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+
+    <div id="particles"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-heart"></i> Christian & Yin
+        </a>
+
+        <div class="nav-actions">
+            <button id="musicBtn" title="Música de fondo">
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#historia">Historia</a></li>
+            <li><a href="index.html#favoritos">Favoritos</a></li>
+            <li><a href="index.html#cartas">Cartas</a></li>
+            <li><a href="index.html#videos">Videos</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Galería <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="galeria_imagenes.html">Imágenes</a></li>
+                    <li><a href="galeria_videos.html">Videos</a></li>
+                    <li><a href="galeria_playlist.html">Playlist</a></li>
+                </ul>
+            </li>
+            <li><a href="detalles.html">Detalles</a></li>
+            <li><a href="preguntas_frecuentes.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero" data-aos="fade-down">
+        <h1>🎵 Nuestra Banda Sonora</h1>
+        <p>Las canciones que cuentan nuestra historia</p>
+    </header>
+
+    <main class="playlist-page-container">
+        <div class="now-playing" data-aos="zoom-in">
+            <div class="album-art">
+                <i class="fa-solid fa-compact-disc"></i>
+            </div>
+            <h2 id="current-title">Escoge una canción</h2>
+            <p id="current-artist" class="artist">Christian & Yin</p>
+            <audio id="main-player" controls>
+                <source id="audio-source" src="" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="song-list-page" data-aos="fade-up">
+            <div class="song-item" onclick="playSong('mus/A Dios le pido.mpeg', 'A Dios Le Pido', 'Juanes')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>A Dios Le Pido</h4>
+                    <p>Juanes</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Contigo.mpeg', 'Contigo', 'Elefante')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Contigo</h4>
+                    <p>Elefante</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Primera Cita.mpeg', 'Primera Cita', 'Carin León')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Primera Cita</h4>
+                    <p>Carin León</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Me Enamora.mpeg', 'Me enamora', 'Juanes')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Me enamora</h4>
+                    <p>Juanes</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Duele el Amor.mpeg', 'Duele el Amor', 'Aleks Syntek, Ana Torroja')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Duele el Amor</h4>
+                    <p>Aleks Syntek, Ana Torroja</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Cuando Me Enamoro.mpeg', 'Cuando Me Enamoro', 'Enrique Iglesias')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Cuando Me Enamoro</h4>
+                    <p>Enrique Iglesias</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/El Amor.mpeg', 'El Amor', 'Tito El Bambino')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>El Amor</h4>
+                    <p>Tito "El Bambino"</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Mas que Amigos.mpeg', 'Más que Amigos', 'Marco Antonio Solís')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Más que Amigos</h4>
+                    <p>Marco Antonio Solís</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Destino.mpeg', 'Destino', 'Greeicy, Nacho')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Destino</h4>
+                    <p>Greeicy, Nacho</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Dejaria Todo.mpeg', 'Dejaría Todo', 'Chayanne')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Dejaría Todo</h4>
+                    <p>Chayanne</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Mi bello Angel.mpeg', 'Mi bello Ángel', 'Los Primos MX')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Mi bello Ángel</h4>
+                    <p>Los Primos MX</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Angel.mpeg', 'Angel', 'Elefante')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Angel</h4>
+                    <p>Elefante</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Eres Mi Sueño.mpeg', 'Eres Mi Sueño', 'Fonseca')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Eres Mi Sueño</h4>
+                    <p>Fonseca</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Corazon sin Cara.mpeg', 'Corazón sin cara', 'Prince Royce')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Corazón sin Cara</h4>
+                    <p>Prince Royce</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+
+            <div class="song-item" onclick="playSong('mus/Tu Mirada.mpeg', 'Tu Mirada', 'Reik')">
+                <div class="song-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="song-info-page">
+                    <h4>Tu Mirada</h4>
+                    <p>Reik</p>
+                </div>
+                <i class="fa-solid fa-play ms-auto"></i>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h2>❤️ Tú & Yo ❤️</h2>
+        <p>Gracias por cada momento, sonrisa y recuerdo juntos.</p>
+        <div class="footer-icons">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-spotify"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/galeria_playlist.js"></script>
+</body>
+</html>

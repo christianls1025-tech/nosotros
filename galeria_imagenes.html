@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes ❤️ | Christian & Yin</title>
+    <link rel="icon" type="image/png" href="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/galeria_imagenes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+
+    <div id="particles"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-heart"></i> Christian & Yin
+        </a>
+
+        <div class="nav-actions">
+            <button id="musicBtn" title="Música de fondo">
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#historia">Historia</a></li>
+            <li><a href="index.html#favoritos">Favoritos</a></li>
+            <li><a href="index.html#cartas">Cartas</a></li>
+            <li><a href="index.html#videos">Videos</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Galería <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="galeria_imagenes.html">Imágenes</a></li>
+                    <li><a href="galeria_videos.html">Videos</a></li>
+                    <li><a href="galeria_playlist.html">Playlist</a></li>
+                </ul>
+            </li>
+            <li><a href="detalles.html">Detalles</a></li>
+            <li><a href="preguntas_frecuentes.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero" data-aos="fade-down">
+        <h1>📸 Nuestros Recuerdos</h1>
+        <p>Cada foto guarda un momento especial ❤️</p>
+    </header>
+
+    <main class="gallery-page-container">
+        <div class="masonry" id="masonryGrid"></div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" alt="Imagen ampliada">
+    </div>
+
+    <footer>
+        <h2>❤️ Tú & Yo ❤️</h2>
+        <p>Gracias por cada momento, sonrisa y recuerdo juntos.</p>
+        <div class="footer-icons">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-spotify"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/galeria_imagenes.js"></script>
+</body>
+</html>
